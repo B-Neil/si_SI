@@ -1,8 +1,8 @@
-from si.data.dataset import Dataset
+from si_SI.src.si.data.dataset import Dataset
 import pandas as pd
 import numpy as np
 
-def read_csv(filename: str, sep: str, label: bool, features : bool) -> Dataset:
+def read_csv(filename: str, sep: str, label: bool = False, features : bool = False) -> Dataset:
     """
     Reads a CSV file and returns a Dataset object
     Parameters
@@ -23,7 +23,7 @@ def read_csv(filename: str, sep: str, label: bool, features : bool) -> Dataset:
     df = pd.read_csv(filename, sep=sep)
 
     if features and label:
-        x = df.iloc[:,;-1].to_numpy()
+        x = df.iloc[:,:-1].to_numpy()
         y = df.iloc[:,-1].to_numpy()
         feature_names = df.columns = df.columns[:-1]
         label_name = df.columns[-1]

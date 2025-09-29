@@ -4,7 +4,7 @@ from datasets import DATASETS_PATH
 
 import os
 
-from si.io.data_file import read_data_file, write_data_file
+from si_.io.data_file import read_data_file, write_data_file
 
 
 class TestDataFile(TestCase):
